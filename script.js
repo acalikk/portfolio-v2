@@ -62,3 +62,21 @@ skillFilters.forEach((button) => {
       : `Showing ${button.textContent.trim()} skills.`;
   });
 });
+
+const contactForm = document.querySelector('#contact-form');
+contactForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const values = new FormData(contactForm);
+  const name = values.get('name').trim();
+  const email = values.get('email').trim();
+  const message = values.get('message').trim();
+  const status = document.querySelector('#contact-status');
+  if (!name || !email || !message) {
+    status.textContent = 'Please complete all fields before opening your draft.';
+    return;
+  }
+  const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
+  const body = encodeURIComponent(`${message}\n\nFrom: ${name}\nReply to: ${email}`);
+  window.location.href = `mailto:aybuke_calik@hotmail.com?subject=${subject}&body=${body}`;
+  status.textContent = 'Your email app should open with a draft. Review it and press Send there. If nothing opens, use the email address below.';
+});
