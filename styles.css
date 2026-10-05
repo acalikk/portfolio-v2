@@ -67,6 +67,7 @@ a { color: inherit; }
   padding: 8rem max(1.5rem, calc((100vw - var(--max-width)) / 2)) 5rem;
 }
 .hero__content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; text-align: center; }
+.eyebrow { margin: 0; color: var(--accent); font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
 .hero__content > * { opacity: 0; transform: translateY(14px); animation: hero-reveal 700ms cubic-bezier(.22, 1, .36, 1) forwards; }
 .hero__content > .status-pill { animation-delay: 100ms; }
 .hero__content > h1 { animation-delay: 220ms; }
