@@ -110,17 +110,19 @@ a { color: inherit; }
 .filter-button:hover, .filter-button:focus-visible { border-color: var(--accent-secondary); color: var(--text); transform: translateY(-1px); }
 .filter-button.is-active { border-color: var(--accent); background: var(--accent); color: var(--background); box-shadow: 0 6px 18px rgba(103, 199, 184, .16); }
 .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-.project-card { display: flex; min-width: 0; flex-direction: column; overflow: visible; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); transition: border-color 200ms ease; }
-.project-card:hover { border-color: rgba(103, 199, 184, .55); }
+.project-card { display: flex; min-width: 0; flex-direction: column; overflow: visible; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); }
 .project-card[hidden] { display: none; }
-.project-card__image { position: relative; display: grid; aspect-ratio: 16 / 9; place-items: center; overflow: visible; border-radius: 14px 14px 0 0; border-bottom: 1px solid var(--border); background: #0f151d; }
-.project-card__image img { display: block; width: 100%; height: 100%; border-radius: 13px 13px 0 0; object-fit: contain; transition: transform 240ms cubic-bezier(.22, 1, .36, 1), box-shadow 240ms ease; }
-.project-card:hover .project-card__image img, .project-card:focus-within .project-card__image img { position: relative; z-index: 1; transform: translateY(-6px) scale(1.025); box-shadow: 0 16px 22px -12px rgba(0, 0, 0, .9); }
-.project-card__image img[src$="fmri-searchlight.jpg"], .project-card__image img[src$="senswiss-calibration.png"], .project-card__image img[src$="senswiss-optical-setup.png"] { object-fit: cover; }
+/* Absolute image sizing prevents intrinsic image dimensions from stretching the grid. */
+.project-card__image { position: relative; flex: 0 0 auto; width: 100%; aspect-ratio: 16 / 9; border-radius: 13px 13px 0 0; background: #0f151d; }
+.project-card__image img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; border-radius: inherit; object-fit: contain; background: #0f151d; transform: translateY(0); box-shadow: 0 0 0 rgba(0, 0, 0, 0); transition: transform 250ms ease-out, box-shadow 250ms ease-out; }
+.project-card:hover .project-card__image img, .project-card:focus-within .project-card__image img { transform: translateY(-4px); box-shadow: 0 14px 18px -10px rgba(0, 0, 0, .65); }
+.project-card__image img[src$="senswiss-optical-setup.png"] { object-fit: cover; }
 .project-card__body { display: flex; flex: 1; flex-direction: column; padding: 1.25rem; }
-.project-card__category { margin: 0 0 .7rem; color: var(--accent-secondary); font-size: .64rem; font-weight: 700; letter-spacing: .09em; line-height: 1.4; text-transform: uppercase; }
-.project-card h3 { margin: 0 0 .7rem; color: var(--text); font-size: 1.16rem; letter-spacing: -.035em; line-height: 1.2; }
+.project-card__category { position: absolute; z-index: 2; top: .75rem; right: .75rem; margin: 0; padding: .4rem .7rem; border: 1px solid rgba(154, 168, 184, .2); border-radius: 999px; background: rgba(11, 13, 16, .92); color: var(--text); font-size: .65rem; font-weight: 500; line-height: 1.2; }
+.project-card h3 { margin: 0 0 .7rem; color: var(--accent); font-size: 1.16rem; letter-spacing: -.035em; line-height: 1.2; }
 .project-card__body > p:not(.project-card__category) { margin: 0 0 1.2rem; color: var(--muted); font-size: .82rem; line-height: 1.65; }
+.project-card__tools { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; padding: 0; margin: 0 0 1.5rem; }
+.project-card__tools li { padding: .3rem .5rem; border-radius: 5px; background: rgba(127, 150, 200, .1); color: var(--muted); font-size: .65rem; line-height: 1.35; }
 .project-card__link { display: inline-flex; align-items: center; gap: .45rem; margin-top: auto; color: var(--accent); font-size: .76rem; font-weight: 700; text-decoration: none; }
 .project-card__link:hover, .project-card__link:focus-visible { color: var(--accent-strong); }
 .project-empty { margin: 2rem 0 0; color: var(--muted); font-size: .9rem; }
