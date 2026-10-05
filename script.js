@@ -41,3 +41,24 @@ filterButtons.forEach((button) => {
     projectEmpty.hidden = visible !== 0;
   });
 });
+
+// Skill filters are independent from the project filters.
+const skillFilters = document.querySelectorAll('[data-skill-filter]');
+const skillGroups = document.querySelectorAll('[data-skill-category]');
+const skillsStatus = document.querySelector('#skills-status');
+document.querySelector('.skills__filters').hidden = false;
+
+skillFilters.forEach((button) => {
+  button.addEventListener('click', () => {
+    const category = button.dataset.skillFilter;
+    skillFilters.forEach((filter) => {
+      filter.setAttribute('aria-pressed', String(filter === button));
+    });
+    skillGroups.forEach((group) => {
+      group.hidden = category !== 'all' && group.dataset.skillCategory !== category;
+    });
+    skillsStatus.textContent = category === 'all'
+      ? 'Showing all four skill categories.'
+      : `Showing ${button.textContent.trim()} skills.`;
+  });
+});
