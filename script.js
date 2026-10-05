@@ -78,5 +78,5 @@ contactForm.addEventListener('submit', (event) => {
   const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
   const body = encodeURIComponent(`${message}\n\nFrom: ${name}\nReply to: ${email}`);
   window.location.href = `mailto:aybuke_calik@hotmail.com?subject=${subject}&body=${body}`;
-  status.textContent = 'Your email app should open with a draft. Review it and press Send there. If nothing opens, use the email address below.';
+  status.textContent = 'Your email app should open with a draft. Review it and press Send there. If nothing opens, use the Get in touch link in the footer.';
 });
