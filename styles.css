@@ -91,7 +91,7 @@ a { color: inherit; }
 .button--secondary { color: var(--text); }
 .button--secondary:hover, .button--secondary:focus-visible { border-color: var(--accent-secondary); background: rgba(127, 150, 200, .14); }
 @keyframes hero-reveal { to { opacity: 1; transform: translateY(0); } }
-.about { border-top: 1px solid var(--border); background: var(--surface); }
+.about { border-top: 1px solid var(--border); background: var(--background); }
 .about__inner { display: grid; grid-template-columns: minmax(180px, .45fr) minmax(0, 1.55fr); align-items: center; gap: clamp(2rem, 8vw, 8rem); width: min(100% - 3rem, var(--max-width)); min-height: 620px; margin: 0 auto; padding: 6rem 0; }
 .about__image-wrap { position: relative; width: min(100%, 240px); }
 .about__image-wrap::after { content: ''; position: absolute; z-index: 0; right: -.8rem; bottom: -.8rem; width: 75%; height: 75%; border: 1px solid var(--warm-accent); opacity: .7; }
@@ -115,7 +115,8 @@ a { color: inherit; }
 /* Absolute image sizing prevents intrinsic image dimensions from stretching the grid. */
 .project-card__image { position: relative; flex: 0 0 auto; width: 100%; aspect-ratio: 16 / 9; border-radius: 13px 13px 0 0; background: #0f151d; }
 .project-card__image img { position: absolute; z-index: 1; inset: 0; display: block; width: 100%; height: 100%; border-radius: inherit; object-fit: contain; background: #0f151d; transform: translateY(0); box-shadow: 0 12px 24px rgba(0, 0, 0, 0); transition: transform 250ms ease-out, box-shadow 250ms ease-out; }
-.project-card:hover .project-card__image img, .project-card:focus-within .project-card__image img { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0, 0, 0, .18); }
+/* Two shadow layers keep the elevation visible against the dark card surface. */
+.project-card:hover .project-card__image img, .project-card:focus-within .project-card__image img { transform: translateY(-4px); box-shadow: 0 8px 10px -3px rgba(0, 0, 0, .85), 0 18px 28px -6px rgba(0, 0, 0, .7); }
 .project-card__image img[src$="senswiss-optical-setup.png"] { object-fit: cover; }
 .project-card__body { display: flex; flex: 1; flex-direction: column; padding: 1.25rem; }
 .project-card__category { position: absolute; z-index: 2; top: .75rem; right: .75rem; margin: 0; padding: .4rem .7rem; border: 1px solid rgba(154, 168, 184, .2); border-radius: 999px; background: rgba(11, 13, 16, .92); color: var(--text); font-size: .65rem; font-weight: 500; line-height: 1.2; }
