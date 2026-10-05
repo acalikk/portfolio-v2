@@ -115,8 +115,8 @@ a { color: inherit; }
 /* Absolute image sizing prevents intrinsic image dimensions from stretching the grid. */
 .project-card__image { position: relative; z-index: 1; flex: 0 0 auto; width: 100%; aspect-ratio: 16 / 9; border-radius: 13px 13px 0 0; background: #0f151d; }
 .project-card__image img { position: absolute; z-index: 1; inset: 0; display: block; width: 100%; height: 100%; border-radius: inherit; object-fit: contain; background: #0f151d; transform: translateY(0); box-shadow: 0 12px 24px rgba(0, 0, 0, 0); transition: transform 250ms ease-out, box-shadow 250ms ease-out; }
-/* A separate shadow layer fades over the body, without changing the card border. */
-.project-card__image::after { content: ''; position: absolute; pointer-events: none; top: calc(100% - 4px); left: 0; right: 0; height: 24px; background: linear-gradient(to bottom, rgba(0, 0, 0, .9), rgba(0, 0, 0, .45) 35%, transparent); opacity: 0; transition: opacity 250ms ease-out; }
+/* Foreground shadow overlays the image's lower edge and fades into the card body. */
+.project-card__image::after { content: ''; position: absolute; z-index: 2; pointer-events: none; top: calc(100% - 24px); left: 0; right: 0; height: 44px; background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, .75) 45%, rgba(0, 0, 0, .4) 65%, transparent); opacity: 0; transition: opacity 250ms ease-out; }
 .project-card:hover .project-card__image img, .project-card:focus-within .project-card__image img { transform: translateY(-4px); box-shadow: 0 12px 24px -4px rgba(0, 0, 0, .7); }
 .project-card:hover .project-card__image::after, .project-card:focus-within .project-card__image::after { opacity: 1; }
 .project-card__image img[src$="senswiss-optical-setup.png"] { object-fit: cover; }
