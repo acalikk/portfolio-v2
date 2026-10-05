@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+<title id="title">Electrochemical measurement workflow</title><desc id="desc">A conceptual sequence of fluid handling, electrode measurements, and data analysis.</desc>
+<rect width="640" height="360" fill="#eee6dc"/>
+<g stroke="#d8cbbb" stroke-width="1"><path d="M0 90H640M0 180H640M0 270H640M80 0V360M160 0V360M240 0V360M320 0V360M400 0V360M480 0V360M560 0V360"/></g>
+<g fill="#fbf8f3" stroke="#906247" stroke-width="2"><rect x="42" y="105" width="150" height="143" rx="12"/><rect x="245" y="105" width="150" height="143" rx="12"/><rect x="448" y="105" width="150" height="143" rx="12"/></g>
+<g stroke="#542929" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M91 137h48v17H91zM105 154v41M125 154v41M93 196h44M115 137v-12M102 125h26"/><path d="M276 143v51h90v-51M284 169h74M294 132v47M320 132v57M346 132v47"/><path d="M478 192v-53M478 192h92M485 179l18-15 19 8 19-22 22-7"/><path d="M201 176h33m-9-7 9 7-9 7M404 176h33m-9-7 9 7-9 7"/></g>
+<g font-family="Arial, sans-serif" text-anchor="middle" fill="#542929"><text x="117" y="225" font-size="16">Fluid handling</text><text x="320" y="225" font-size="16">Electrode testing</text><text x="523" y="225" font-size="16">Data analysis</text><text x="320" y="60" font-size="20" font-weight="700">AUTOMATED MEASUREMENTS</text><text x="320" y="295" font-size="15">CV · EIS · Lock-in detection</text><text x="320" y="327" font-size="11" fill="#79614e">CONCEPTUAL WORKFLOW</text></g>
+</svg>

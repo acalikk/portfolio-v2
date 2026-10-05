@@ -100,6 +100,29 @@ a { color: inherit; }
 .about__content .eyebrow { margin-bottom: 1rem; }
 .about__content h2 { max-width: 600px; margin: 0 0 1.5rem; color: var(--text); font-size: clamp(2rem, 4vw, 4.2rem); letter-spacing: -.06em; line-height: 1; }
 .about__content p:not(.eyebrow) { max-width: 600px; color: var(--muted); font-size: 1rem; line-height: 1.75; }
+.work { border-top: 1px solid var(--border); }
+.work__inner { width: min(100% - 3rem, var(--max-width)); margin: 0 auto; padding: 7rem 0; }
+.work__heading { display: flex; align-items: end; justify-content: space-between; gap: 3rem; margin-bottom: 2.5rem; }
+.work__heading h2 { max-width: 700px; margin: .9rem 0 0; color: var(--text); font-size: clamp(2.2rem, 5vw, 4.8rem); letter-spacing: -.065em; line-height: .98; }
+.work__intro { max-width: 300px; margin: 0 0 .2rem; color: var(--muted); font-size: .9rem; line-height: 1.65; }
+.project-filters { display: flex; flex-wrap: wrap; gap: .55rem; margin-bottom: 2rem; }
+.filter-button { border: 1px solid var(--border); border-radius: 999px; background: transparent; color: var(--muted); padding: .62rem .9rem; font: inherit; font-size: .72rem; font-weight: 650; cursor: pointer; transition: color 180ms ease, border-color 180ms ease, background 180ms ease, transform 180ms ease; }
+.filter-button:hover, .filter-button:focus-visible { border-color: var(--accent-secondary); color: var(--text); transform: translateY(-1px); }
+.filter-button.is-active { border-color: var(--accent); background: var(--accent); color: var(--background); }
+.project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.project-card { display: flex; min-width: 0; flex-direction: column; overflow: hidden; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); transition: transform 200ms ease, border-color 200ms ease; }
+.project-card:hover { border-color: rgba(103, 199, 184, .55); transform: translateY(-4px); }
+.project-card[hidden] { display: none; }
+.project-card__image { display: grid; aspect-ratio: 16 / 9; place-items: center; overflow: hidden; border-bottom: 1px solid var(--border); background: #0f151d; }
+.project-card__image img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.project-card__image img[src$="fmri-searchlight.jpg"], .project-card__image img[src$="senswiss-calibration.png"], .project-card__image img[src$="senswiss-optical-setup.png"] { object-fit: cover; }
+.project-card__body { display: flex; flex: 1; flex-direction: column; padding: 1.25rem; }
+.project-card__category { margin: 0 0 .7rem; color: var(--accent-secondary); font-size: .64rem; font-weight: 700; letter-spacing: .09em; line-height: 1.4; text-transform: uppercase; }
+.project-card h3 { margin: 0 0 .7rem; color: var(--text); font-size: 1.16rem; letter-spacing: -.035em; line-height: 1.2; }
+.project-card__body > p:not(.project-card__category) { margin: 0 0 1.2rem; color: var(--muted); font-size: .82rem; line-height: 1.65; }
+.project-card__link { display: inline-flex; align-items: center; gap: .45rem; margin-top: auto; color: var(--accent); font-size: .76rem; font-weight: 700; text-decoration: none; }
+.project-card__link:hover, .project-card__link:focus-visible { color: var(--accent-strong); }
+.project-empty { margin: 2rem 0 0; color: var(--muted); font-size: .9rem; }
 .site-footer {
   display: flex;
   align-items: center;
@@ -152,6 +175,14 @@ a { color: inherit; }
   .hero__description { margin-top: 1.25rem; }
   .about__inner { grid-template-columns: 1fr; gap: 3rem; width: min(100% - 2rem, var(--max-width)); min-height: auto; padding: 5rem 0; }
   .about__image-wrap { width: min(100%, 220px); }
+  .work__inner { width: min(100% - 2rem, var(--max-width)); padding: 5rem 0; }
+  .work__heading { display: block; margin-bottom: 2rem; }
+  .work__intro { max-width: 560px; margin-top: 1.25rem; }
+  .project-grid { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 681px) and (max-width: 980px) {
+  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (prefers-reduced-motion: reduce) {
